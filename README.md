@@ -17,13 +17,20 @@ The goal of this repository is to concentrate my learnings about the Go language
 ## The language
 * Goroutines are lightweight threads that are managed by the Go runtime.
 * To run a function in a new goroutine, just put "go" before the function call.
+ * **Packages**: functions which start with capital letter, can be exported and reused.
 
-## CLI
+## Setup
 * You have to configure a $GOPATH variable pointing to your workspace.
 * Append to your PATH: $GOPATH/bin
-* If you keep your code in a source repository somewhere, then you should use the root of that source repository as your base path. For instance, if you have a GitHub account at github.com/user, that should be your base path.
-* To compile: `go install <filePath>`
+* If you keep your code in a source repository somewhere, then you should use the root of that source repository as your base path. For instance, if you have a GitHub account at github.com/islomar, that should be your base path.
+* `go install`: to compile and install (under /bin if the functions are not reusable, under /pkg if they are)
  * After compiling the go file, it creates an executable file under /bin folder
+* `go build`: compile the Go file
+
+
+## Packages
+* Use capital letters in functions, so that they can be reused.
+* Use `go install` to compile and install a package (something that can be reused): it will create a /pkg subfolder.
 
 ## Interesting links
 
