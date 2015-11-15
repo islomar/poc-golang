@@ -3,6 +3,8 @@ The goal of this repository is to concentrate my learnings about the Go language
 
 ## General information
 * Go is an open source project developed by a team at Google and many contributors from the open source community.
+* It was born on 02.01.2006
+
 
 ## Characteristics
 * Compiles
@@ -46,6 +48,9 @@ The goal of this repository is to concentrate my learnings about the Go language
 * Channels are great, but sometimes other concurrency mechanisms are a better fit.
 * The sync package provides mutexes, condition variables and more useful primitives.
 
+## net/http
+* The net/http package provides an HTTP client.
+* The client handles HTTP Keep-Alive using a pool of connections, by default.
 
 ## Interesting links
 
