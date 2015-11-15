@@ -18,6 +18,13 @@ The goal of this repository is to concentrate my learnings about the Go language
 * Goroutines are lightweight threads that are managed by the Go runtime.
 * To run a function in a new goroutine, just put "go" before the function call.
 
+## CLI
+* You have to configure a $GOPATH variable pointing to your workspace.
+* Append to your PATH: $GOPATH/bin
+* If you keep your code in a source repository somewhere, then you should use the root of that source repository as your base path. For instance, if you have a GitHub account at github.com/user, that should be your base path.
+* To compile: `go install <filePath>`
+ * After compiling the go file, it creates an executable file under /bin folder
+
 ## Interesting links
 
 ### Videos
