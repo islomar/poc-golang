@@ -52,6 +52,10 @@ The goal of this repository is to concentrate my learnings about the Go language
 * The net/http package provides an HTTP client.
 * The client handles HTTP Keep-Alive using a pool of connections, by default.
 
+## html/template
+* It doesn't do automatic escaping
+
+
 ## Interesting links
 
 ### Videos
