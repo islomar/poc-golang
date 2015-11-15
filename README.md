@@ -28,12 +28,24 @@ The goal of this repository is to concentrate my learnings about the Go language
 * `go build`: compile the Go file
 * `go test`: execute method **Test** inside **_test.go** file.
 
+
+## Testing
+* File with **_test** suffix.
+
+
 ## Packages
 * Use capital letters in functions, so that they can be reused.
 * Use `go install` to compile and install a package (something that can be reused): it will create a /pkg subfolder.
 
-## Testing
-* File with **_test** suffix.
+## Channels
+* Channels are typed conduits for synchronization and communication between goroutines.
+* They're a versatile and expressive means of modelling concurrent processes.
+* It's a kind of pipeline.
+
+## Sync
+* Channels are great, but sometimes other concurrency mechanisms are a better fit.
+* The sync package provides mutexes, condition variables and more useful primitives.
+
 
 ## Interesting links
 
