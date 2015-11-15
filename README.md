@@ -28,6 +28,7 @@ The goal of this repository is to concentrate my learnings about the Go language
 ## Interesting links
 
 ### Videos
+* Writing, building and testing Go code: [https://www.youtube.com/watch?v=XCsL89YtqCs]()
 * Andrew Gerrand - Go: a simple programming environment - [https://vimeo.com/69237265](https://vimeo.com/69237265) >> slides: [https://speakerdeck.com/railsberry/go-a-simple-programming-environment-by-andrew-gerrand](https://speakerdeck.com/railsberry/go-a-simple-programming-environment-by-andrew-gerrand)
 
 
