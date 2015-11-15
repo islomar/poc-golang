@@ -26,11 +26,14 @@ The goal of this repository is to concentrate my learnings about the Go language
 * `go install`: to compile and install (under /bin if the functions are not reusable, under /pkg if they are)
  * After compiling the go file, it creates an executable file under /bin folder
 * `go build`: compile the Go file
-
+* `go test`: execute method **Test** inside **_test.go** file.
 
 ## Packages
 * Use capital letters in functions, so that they can be reused.
 * Use `go install` to compile and install a package (something that can be reused): it will create a /pkg subfolder.
+
+## Testing
+* File with **_test** suffix.
 
 ## Interesting links
 
