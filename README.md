@@ -33,6 +33,15 @@ The goal of this repository is to concentrate my learnings about the Go language
 * To run a function in a new goroutine, just put "go" before the function call.
  * **Packages**: functions which start with capital letter, can be exported and reused.
 * By convention, the package name is the same as the last element of the import path. For instance, the "math/rand" package comprises files that begin with the statement package rand.
+* In Go, a name is exported if it begins with a capital letter.
+* In a function, the type comes after the variable name.
+* Go's declaration syntax: [https://blog.golang.org/gos-declaration-syntax](https://blog.golang.org/gos-declaration-syntax)
+* When two or more consecutive named function parameters share a type, you can omit the type from all but the last.
+* A function can return any number of results: `func swap(x, y string) (string, string)`
+* Go's return values may be named. If so, they are treated as variables defined at the top of the function.
+* A return statement without arguments returns the named return values. This is known as a "naked" return.
+ * Naked return statements should be used only in short functions. They can harm readability in longer functions.
+* xxx
 
 ## Setup and CLI
 * You have to configure a $GOPATH variable pointing to your workspace.
