@@ -2,8 +2,9 @@
 The goal of this repository is to concentrate my learnings about the Go language.
 
 ## General information
-* Go is an open source project developed by a team at Google and many contributors from the open source community.
-* It was born on 02.01.2006
+* Go is an open source project developed by a team at Google and many contributors from the open source community:
+ * [https://en.wikipedia.org/wiki/Go_(programming_language)](https://en.wikipedia.org/wiki/Go_(programming_language))
+* It was born on 10.11.2009
 * Go v1 was released in March 2012
 * Current version: 1.5 (August 2015)
 
@@ -32,7 +33,7 @@ The goal of this repository is to concentrate my learnings about the Go language
 * To run a function in a new goroutine, just put "go" before the function call.
  * **Packages**: functions which start with capital letter, can be exported and reused.
 
-## Setup
+## Setup and CLI
 * You have to configure a $GOPATH variable pointing to your workspace.
 * Append to your PATH: $GOPATH/bin
 * If you keep your code in a source repository somewhere, then you should use the root of that source repository as your base path. For instance, if you have a GitHub account at github.com/islomar, that should be your base path.
@@ -40,11 +41,13 @@ The goal of this repository is to concentrate my learnings about the Go language
  * After compiling the go file, it creates an executable file under /bin folder
 * `go build`: compile the Go file
 * `go test`: execute method **Test** inside **_test.go** file.
-
+* `go get`: remote package management
 
 ## Testing
 * File with **_test** suffix.
 
+** Goroutines
+* light-weight processes
 
 ## Packages
 * Use capital letters in functions, so that they can be reused.
@@ -78,7 +81,7 @@ The flag package provides a simple API for parsing command-line flags.
 
 
 ### Books and tutorials
-* A Tour of Go: [https://tour.golang.org/welcome/1](https://tour.golang.org/welcome/1)
+* A Tour of Go: [https://tour.golang.org/list](https://tour.golang.org/list)
 * [https://golang.org/doc/](https://golang.org/doc/)
 * An introduction to programming in Go: [https://www.golang-book.com/books/intro](https://www.golang-book.com/books/intro)
 * The way to Go: [http://www.amazon.com/The-Way-To-Introduction-Programming/dp/1469769166/ref=sr_1_1?ie=UTF8&qid=1377988316&sr=8-1&keywords=the+way+to+Go](http://www.amazon.com/The-Way-To-Introduction-Programming/dp/1469769166/ref=sr_1_1?ie=UTF8&qid=1377988316&sr=8-1&keywords=the+way+to+Go)
