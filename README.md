@@ -4,6 +4,17 @@ The goal of this repository is to concentrate my learnings about the Go language
 ## General information
 * Go is an open source project developed by a team at Google and many contributors from the open source community.
 * It was born on 02.01.2006
+* Go v1 was released in March 2012
+* Current version: 1.5 (August 2015)
+
+### Go 1.5 [https://golang.org/doc/go1.5](https://golang.org/doc/go1.5)
+* The compiler and runtime are now written entirely in Go (with a little assembler). C is no longer involved in the implementation, and so the C compiler that was once necessary for building the distribution is gone. The only C source left in the tree is related to testing or to cgo.
+* The garbage collector is now concurrent and provides dramatically lower pause times by running, when possible, in parallel with other goroutines.
+* By default, Go programs run with GOMAXPROCS set to the number of cores available; in prior releases it defaulted to 1.
+* Support for internal packages is now provided for all repositories, not just the Go core.
+* The go command now provides experimental support for "vendoring" external dependencies.
+* A new go tool trace command supports fine-grained tracing of program execution.
+* A new go doc command (distinct from godoc) is customized for command-line use.
 
 
 ## Characteristics
@@ -55,6 +66,9 @@ The goal of this repository is to concentrate my learnings about the Go language
 ## html/template
 * It doesn't do automatic escaping
 
+## flag
+The flag package provides a simple API for parsing command-line flags.
+
 
 ## Interesting links
 
@@ -64,6 +78,7 @@ The goal of this repository is to concentrate my learnings about the Go language
 
 
 ### Books and tutorials
+* A Tour of Go: [https://tour.golang.org/welcome/1](https://tour.golang.org/welcome/1)
 * [https://golang.org/doc/](https://golang.org/doc/)
 * An introduction to programming in Go: [https://www.golang-book.com/books/intro](https://www.golang-book.com/books/intro)
 * The way to Go: [http://www.amazon.com/The-Way-To-Introduction-Programming/dp/1469769166/ref=sr_1_1?ie=UTF8&qid=1377988316&sr=8-1&keywords=the+way+to+Go](http://www.amazon.com/The-Way-To-Introduction-Programming/dp/1469769166/ref=sr_1_1?ie=UTF8&qid=1377988316&sr=8-1&keywords=the+way+to+Go)
