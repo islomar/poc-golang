@@ -95,6 +95,7 @@ The flag package provides a simple API for parsing command-line flags.
 
 ### Books and tutorials
 * A Tour of Go: [https://tour.golang.org/list](https://tour.golang.org/list)
+* [Best practices](https://peter.bourgon.org/go-best-practices-2016/)
 * [https://golang.org/doc/](https://golang.org/doc/)
 * An introduction to programming in Go: [https://www.golang-book.com/books/intro](https://www.golang-book.com/books/intro)
 * The way to Go: [http://www.amazon.com/The-Way-To-Introduction-Programming/dp/1469769166/ref=sr_1_1?ie=UTF8&qid=1377988316&sr=8-1&keywords=the+way+to+Go](http://www.amazon.com/The-Way-To-Introduction-Programming/dp/1469769166/ref=sr_1_1?ie=UTF8&qid=1377988316&sr=8-1&keywords=the+way+to+Go)
