@@ -104,13 +104,3 @@ The flag package provides a simple API for parsing command-line flags.
 
 ### General
 * https://github.com/go-lang-plugin-org/go-lang-idea-plugin/wiki/v1.0.0-Setup-initial-project
-
-
-
-[11/15/2015, 20:58] +34 620 66 64 52: ¿Qué hay, Alberto? Ya me contó Sonia que te vas a Windsor...
-[11/15/2015, 20:58] +34 620 66 64 52: si hay algo en lo que creas que puedo ayudarte, dímelo
-[11/15/2015, 20:58] +34 620 66 64 52: sobre temas de NIN, bancos, búsqueda de apartamento, qué sé yo...
-[11/15/2015, 20:59] +34 620 66 64 52: tengo algunos links por lo de Londres
-[11/15/2015, 20:59] +34 620 66 64 52: sólo espero que no te vayas como camarero, porque así poco inglés se aprende (al menos es lo que siempre me ha contado toda la gente que he conocido)
-[11/15/2015, 21:00] +34 620 66 64 52: no hace falta un nivelón para trabajar en nuestro sector, créeme, conozco a gente que se fue con un inglés muy muy rústico, del instituto pelado, y les contrataron
-[11/15/2015, 21:00] +34 620 66 64 52: bueno, lo dicho, si puedo echar una mano en algo, dímelo 😉
