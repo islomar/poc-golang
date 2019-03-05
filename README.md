@@ -107,3 +107,7 @@ The flag package provides a simple API for parsing command-line flags.
 
 ### To read
 * How to create a REST API in Golang: https://blog.friendsofgo.tech/posts/como_crear_una_api_rest_en_golang/
+* https://github.com/slok/goresilience
+
+### TDD and Goland
+* https://quii.gitbook.io/learn-go-with-tests/
