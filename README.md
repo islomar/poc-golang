@@ -6,16 +6,8 @@ The goal of this repository is to concentrate my learnings about the Go language
  * [https://en.wikipedia.org/wiki/Go_(programming_language)](https://en.wikipedia.org/wiki/Go_(programming_language))
 * It was born on 10.11.2009
 * Go v1 was released in March 2012
-* Current version: 1.5 (August 2015)
-
-### Go 1.5 [https://golang.org/doc/go1.5](https://golang.org/doc/go1.5)
-* The compiler and runtime are now written entirely in Go (with a little assembler). C is no longer involved in the implementation, and so the C compiler that was once necessary for building the distribution is gone. The only C source left in the tree is related to testing or to cgo.
-* The garbage collector is now concurrent and provides dramatically lower pause times by running, when possible, in parallel with other goroutines.
-* By default, Go programs run with GOMAXPROCS set to the number of cores available; in prior releases it defaulted to 1.
-* Support for internal packages is now provided for all repositories, not just the Go core.
-* The go command now provides experimental support for "vendoring" external dependencies.
-* A new go tool trace command supports fine-grained tracing of program execution.
-* A new go doc command (distinct from godoc) is customized for command-line use.
+* Current version: 1.12 (March 2019), https://golang.org/doc/go1.12
+* Go is expressive, concise, clean, and efficient. Its concurrency mechanisms make it easy to write programs that get the most out of multicore and networked machines, while its novel type system enables flexible and modular program construction. Go compiles quickly to machine code yet has the convenience of garbage collection and the power of run-time reflection. It's a fast, statically typed, compiled language that feels like a dynamically typed, interpreted language.
 
 
 ## Characteristics
@@ -85,6 +77,9 @@ The flag package provides a simple API for parsing command-line flags.
 ## expvar
 * You can monitor your app using expvar.
 * Export variables via an HTTP handler registered at /debug/vars (http://localhost:8080/debug/vars)
+
+## Static analysis
+* gofmt for formatting
 
 ## Interesting links
 
