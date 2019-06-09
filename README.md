@@ -14,7 +14,7 @@ The goal of this repository is to concentrate my learnings about the Go language
 * Compiles
 * Statically typed
 * Clean syntax
-* Symple type system
+* Simple type system
 * Concurrent primitives
 * Rich standard library
 * Great tools
@@ -33,7 +33,7 @@ The goal of this repository is to concentrate my learnings about the Go language
 * Go's return values may be named. If so, they are treated as variables defined at the top of the function.
 * A return statement without arguments returns the named return values. This is known as a "naked" return.
  * Naked return statements should be used only in short functions. They can harm readability in longer functions.
-* xxx
+
 
 ## Setup and CLI
 * You have to configure a $GOPATH variable pointing to your workspace.
@@ -48,8 +48,7 @@ The goal of this repository is to concentrate my learnings about the Go language
 ## Testing
 * File with **_test** suffix.
 
-** Goroutines
-* light-weight processes
+* Goroutines: light-weight processes
 
 ## Packages
 * Use capital letters in functions, so that they can be reused.

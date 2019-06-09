@@ -1,6 +1,13 @@
 # Annotations from Codely.tv course about Go
-@adrianpgl
-@joanjan14
+* People
+    - @adrianpgl
+    - @joanjan14
+* Example source code: https://github.com/CodelyTV/golang-introduction
+
+
+## General
+* Go is compiled
+* Multiplatform
 
 ## Go in 15 minutes
 * https://www.youtube.com/watch?time_continue=8&v=5QokUwp99oY
@@ -63,8 +70,8 @@
     - Lower case: private
 * It works with packages (like Python). Each folder is a package. Each package should be completely independent.
 * Package import, three ways:
-    - `"fmt`
-    - `. "fmt`: dot imports >> `Println
+    - `"fmt` >> `fmt.Println()`
+    - `. "fmt`: dot imports >> `Println()`
     - `format fmg`: alias import, you can do `format.Println`
     - `_ "fmt`: to tell the compiler that we are not using directly in our code (transitive dependencies). E.g. when doing tests or using an ORM.
 * `const`
@@ -102,6 +109,28 @@
 ## First steps: creating a project from scratch
 * `$GOPATH`: bin (binaries), pkg (dependencies), src (source code)
 * Go modules: https://blog.friendsofgo.tech/posts/go-modules-en-tres-pasos/
+    - Now the dependencies como natively, we do not need `$GOPATH` to create the project
+    - Go modules does not come activated by default in `$GOPATH`: you need to set `GO111MODULE=on`
+* `go mod init`: inside an empty folder, to initialize the module (a file `go.mod` gets generated)
+    - `go.mod` should never be modified manually
+* `go mod tidy`: download dependencies
+    - it generates `go.sum` if it does not exist with the dependencies versions and integrity hashes
+* `go build` and `go test` update the `go.mod` file with the required packages
+* Optional: run `go mod vendor` if you want to create a backwards-compatible `vendor` folder.
+* **Go flags**
+    - https://golang.org/pkg/flag/
+    - https://blog.friendsofgo.tech/posts/crear-tu-primer-cli-en-go/
+    - `flag.NewFlagSet()`, `flag.String()`, `flag.NArg()`, `flag.Arg(0)`
+* To access a variable which is a pointer, use an asterisk: `*variableNAme`
+* Declare a pointer to a variable/struct:  `&variableName`
+* **Cobra** library
+    - https://github.com/spf13/cobra
+    - Library for CLI (the Docker client is developed with Cobra)
+    - Two parts: the library and the command line
+    - Install the library: `go get -u github.com/spf13/cobra/cobra`
+    - To create the project: `cobra init`
+    - To add new commands: `cobra add <command_name>`
+     
 
 
 ## WTFs
