@@ -130,12 +130,25 @@
     - Install the library: `go get -u github.com/spf13/cobra/cobra`
     - To create the project: `cobra init`
     - To add new commands: `cobra add <command_name>`
+
      
+## Data structures in Go
+* The array size defines its type
+* A slice is a data structure that represents an underlying array: it contains
+    - a pointer to the underlying array
+    - length of the underlying array (what it is actually used)
+    - capacity
+* Creation of a slice: `slices := make([]string, 3)`
+* Usually you work with slices, unless you know the size.
+* Reading files
+    - Simple: `bufio`, `os`...
+    - Rich: `encoding/json`, `encoding/xml`...
 
 
 ## WTFs
 * Visibility public/private according to upper/lower case
 * Implicit interfaces
+* The array size defines its type
 
 
 ## Links
