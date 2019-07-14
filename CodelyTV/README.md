@@ -226,7 +226,23 @@ type Beer struct {
 
 ## Automated testing
 * https://github.com/CodelyTV/golang-introduction/tree/master/08-automated_tests
-* mocks from `testify`
+* define under `package xx_test`, so that you don't have access to private methods
+* `func TestXxxx()`
+* test files like `xxxx_test.go` under same folder (though it could be all together under a `tests` folder)
+* Go does not compile the tests, it is something independent when running `go test xx`
+* Instead of asserting, we fail if something did not go as expected. Use `testify` for asserting
+* Run: `$ go test ./...`
+* Very common to use mocks from `testify`
+* Data providers
+    - Table driven tests
+    - https://github.com/CodelyTV/golang-introduction/blob/master/08-automated_tests/internal/fetching/service_test.go#L15
+    - `go test ./... -run=TestFetchByID/"valid beer"`, to run only one test
+* Mocks:
+    - Usually you create it on your own.
+    - The trainer usually uses the mocking from `testify`
+    - Another option: https://github.com/matryer/moq, you need to manually generate it from an interface (it generates a file)
+    - A very interesting one: https://github.com/vektra/mockery
+* TBD
 
 
 ## Debugging errors
@@ -243,12 +259,21 @@ TBD
 
 ## Exercises
 * Error handling: https://pro.codely.tv/library/introduccion-a-go-tu-primera-app/89042/path/step/59271607/
+* Testing: https://pro.codely.tv/library/introduccion-a-go-tu-primera-app/89042/path/step/59282342/
 
 
 ## WTFs
 * Visibility public/private according to upper/lower case
+* Looks like not differentiating "A has same type of B" and "A is compound of B"
+* single letters as variable names
+* repeated block for handling err...
 * Implicit interfaces
 * The array size defines its type
+* creating an interface for the service... just because, looks like a convention, even if you don't have another implementation
+* No Enum
+* test 
+    - files like `xxxx_test.go` under same folder (though it could be all together under a `tests` folder)
+    - Instead of asserting, we fail if something did not go as expected. Use `testify` for asserting
 
 
 ## Links
@@ -265,3 +290,6 @@ TBD
 * Friends of Go:
     - Twitter: https://twitter.com/friendsofgotech
     - Blog: https://friendsofgo.tech
+
+## To ask or research
+* Equivalent to Hamcrest?
