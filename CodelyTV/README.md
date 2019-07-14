@@ -8,6 +8,7 @@
 ## General
 * Go is compiled
 * Multiplatform
+* Single thread
 
 ## Go in 15 minutes
 * https://www.youtube.com/watch?time_continue=8&v=5QokUwp99oY
@@ -143,6 +144,105 @@
 * Reading files
     - Simple: `bufio`, `os`...
     - Rich: `encoding/json`, `encoding/xml`...
+* Enums: weekdays example https://play.golang.org/p/fO9qEoBCdWg
+
+
+## Entities and Repositories
+* https://github.com/CodelyTV/golang-introduction/blob/master/04-modeling_data/internal/beer.go
+* In Go usually no dependency injection libraries are used, though it exists some like [Wire](https://github.com/google/wire)
+    - https://blog.friendsofgo.tech/posts/gestion-de-dependencias-en-golang/
+* NewRepository 
+```
+type repository struct {
+}
+
+func NewRepository() beerscli.BeerRepo {
+   	return &repository{}
+}
+```
+    - `&repository{}` is the way to initialize an empty repository struct. The & means that we are returning a pointer to the struct 
+* `Unknown BeerType = iota`, `iota` means that we want to assign incremental values
+    - https://github.com/CodelyTV/golang-introduction/blob/master/04-modeling_data/internal/beer.go#L17
+    - `Unknown` means that it would start with 0
+* The "complex" types are defined as pointers, to be able to pass them by reference and modified them, e.g. BeerType here:
+```
+type Beer struct {
+	ProductID int
+	Type      *BeerType
+```
+* Because Go packages must be self-contained, the repository interface declaration goes in the same file than the type . Only the interface implementation would go in a different file.
+
+
+## HTTP requests
+* `net/http` package
+* Public Beers API for playing around: http://ontariobeerapi.ca/beers/
+* Other interesting public APIs for trying:
+    - https://pokeapi.co 
+    - https://swapi.co 
+    - https://api.github.com 
+    - https://punkapi.com
+* `UnmarshalJSON()` is the name which should have the struct function for unmarshalling in a specific way: https://github.com/CodelyTV/golang-introduction/blob/master/05-parsing_http_response/internal/beer.go#L65
+* Declare **struct tags** for matching the entity and repository data: https://github.com/CodelyTV/golang-introduction/blob/master/05-parsing_http_response/internal/beer.go#L9
+* **There is no inheritance** in Go.
+* There is both composition for structs and for interfaces.
+
+
+## Error handling
+* https://github.com/CodelyTV/golang-introduction/tree/master/06-error_handling
+* There are no exceptions in Go, but **errors**.
+* `log.Fatal(err)`: it prints the error and a System exit with status != 0 and stops the execution (but it does not propagate an error up).
+* `panic(err)`: it propagates the error up. It can be captured with the clause `defer func()`
+    - Do NOT use `panic()` usually.
+* To create an error: `errors.New("This is the error description")`
+* When you want to return an error, it must be the last argument.
+* Go proverbs by Rob Pike:
+    - https://go-proverbs.github.io/
+    - https://www.youtube.com/watch?v=PAAkCSZUG1c
+* Three strategies to handle errors:
+    - *Sentinel errors*: 
+        - when using specific errors to decide what to do
+        - `errors.New("Ooooppss!!")`
+        - discouraged in general because from the outside you can couple to it
+    - *Custom errors*
+        - it's about adding more context to the error
+        - create a struct with a function `Error()` which returns a string
+        - and then check the error type...
+        ```
+            if err, ok := err.(*BeerNotFoundErr); ok {
+                log.Fatal(err)
+            }	
+        ```
+    - *Opaque errors*
+        - The less you know about the error, the better.
+        - `"github.com/pkg/errors"`
+        - `errors.Wrapf(err, "Something bad happened: %s", file)`: we wrap it when it is an error from an external library of from the Go core
+        - if it is our own error, we return it just like this `errors.Errorf("my error")`
+* The "recommended way":
+    - https://github.com/CodelyTV/golang-introduction/blob/master/07-behaviour_error_handling/internal/errors/errortypes.go
+    - Handle errors based on their behaviour
+    - private struct with wrapper methods and `func IsXxxErr(err error) bool`
+    - to "hide" the error to the outside. You get decoupled from the error...
+
+
+## Automated testing
+* https://github.com/CodelyTV/golang-introduction/tree/master/08-automated_tests
+* mocks from `testify`
+
+
+## Debugging errors
+TBD
+
+
+## Concurrency and parallelism
+TBD
+
+
+## Go project structure
+* Having an `internal` folder is quite common: everything inside there will not be visible from the outside
+
+
+## Exercises
+* Error handling: https://pro.codely.tv/library/introduccion-a-go-tu-primera-app/89042/path/step/59271607/
 
 
 ## WTFs
