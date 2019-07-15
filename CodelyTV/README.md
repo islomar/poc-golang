@@ -144,8 +144,40 @@
 * Reading files
     - Simple: `bufio`, `os`...
     - Rich: `encoding/json`, `encoding/xml`...
-* Enums: weekdays example https://play.golang.org/p/fO9qEoBCdWg
 
+
+## Types
+* struct:  son estructuras de datos formadas por listados de atributos caracterizados por un nombre y un tipo
+    - `var page struct { ... }`
+* Defined alias = type:  you can create types from other types (struct, string, interface, func, channel, etc.)
+* There is no `Enum` type, but a convention like https://play.golang.org/p/fO9qEoBCdWg:
+```
+type Weekday int
+
+const (
+	Monday    Weekday = 0
+	Tuesday   Weekday = 1
+	Wednesday Weekday = 2
+	Thursday  Weekday = 3
+	Friday    Weekday = 4
+	Saturday  Weekday = 5
+	Sunday    Weekday = 6
+)
+
+func (d Weekday) String() string {
+	names := []string{
+		"Monday",
+		"Tuesday",
+		"Wednesday",
+		"Thursday",
+		"Friday",
+		"Saturday",
+		"Sunday",
+	}
+
+	return names[d]
+}
+```
 
 ## Entities and Repositories
 * https://github.com/CodelyTV/golang-introduction/blob/master/04-modeling_data/internal/beer.go
@@ -242,11 +274,32 @@ type Beer struct {
     - The trainer usually uses the mocking from `testify`
     - Another option: https://github.com/matryer/moq, you need to manually generate it from an interface (it generates a file)
     - A very interesting one: https://github.com/vektra/mockery
-* TBD
 
 
 ## Debugging errors
-TBD
+### Profiling
+* https://github.com/CodelyTV/golang-introduction/blob/master/10-profiling/cmd/beers-cli/main.go
+    - `go tool pprof <app_to_be_run> <profiling_filename>`, e.g. beers.mem.prof
+    - Execute a command, e.g. `top 5` to check the top 5 functions which have whatever resource consumption we are measuring (memory, CPU time, etc.)
+    - Execute `web` to show the critical path and visual execution.
+* Amdahl's law: https://en.wikipedia.org/wiki/Amdahl%27s_law
+* We can profile as HTTP as well: https://golang.org/pkg/net/http/pprof/
+* https://blog.golang.org/profiling-go-programs
+* To read and understand the files generated:
+    - go tool pprof
+    - go-torch
+
+### Benchmarking
+* https://github.com/CodelyTV/golang-introduction/tree/master/09-benchmarking
+* https://github.com/CodelyTV/golang-introduction/blob/master/09-benchmarking/internal/storage/ontario/repository_test.go
+* Once we have updated our code for adding the benchmarking (e.g. in a test file), we can run `go test -run=GetBeers -bench=. > bench.old`
+* `go test -bench=.`
+* To measure which implementation is better:
+    - `go get -u golang.org/x/tools/cmd/benchcmp`
+    - `go test -bench=. > bench.old`
+    - `go test -bench=. > bench.new`
+    - `benchcmp bench.old bench.new`
+* The library `jsoniter` is much more optimal for un/marshalling json.
 
 
 ## Concurrency and parallelism
