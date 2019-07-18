@@ -303,12 +303,23 @@ type Beer struct {
 
 
 ## Concurrency and parallelism
-TBD
+* https://github.com/CodelyTV/golang-introduction/tree/master/11-sharing_memory_concurrency
+* Shared memory:
+    - Maybe needed when dealing with big data
+    - https://golang.org/pkg/sync/#Mutex
+    - Example: https://github.com/CodelyTV/golang-introduction/blob/master/11-sharing_memory_concurrency/internal/fetching/service.go#L45
+* Message sending:
+    - Use [copy](https://golang.org/pkg/builtin/#copy) when dealing with slices, in order to not share the array.
+* **Don’t communicate by sharing memory, share memory by communicating.**
 
 
 ## Go project structure
 * Having an `internal` folder is quite common: everything inside there will not be visible from the outside
-
+* https://blog.friendsofgo.tech/posts/como_estructurar_tus_aplicaciones_go/
+* sadfasf
+    - `cmd`: entrypoints, client actions.
+    - `pkg`: everything that could be reused from the outside
+    - `internal`: it is protected, only for our own stuff, not visible.
 
 ## Exercises
 * Error handling: https://pro.codely.tv/library/introduccion-a-go-tu-primera-app/89042/path/step/59271607/
