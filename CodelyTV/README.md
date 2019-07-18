@@ -110,12 +110,15 @@
 ## First steps: creating a project from scratch
 * `$GOPATH`: bin (binaries), pkg (dependencies), src (source code)
 * Go modules: https://blog.friendsofgo.tech/posts/go-modules-en-tres-pasos/
-    - Now the dependencies como natively, we do not need `$GOPATH` to create the project
+    - Now the dependencies come natively, we do not need `$GOPATH` to create the project
     - Go modules does not come activated by default in `$GOPATH`: you need to set `GO111MODULE=on`
 * `go mod init`: inside an empty folder, to initialize the module (a file `go.mod` gets generated)
     - `go.mod` should never be modified manually
 * `go mod tidy`: download dependencies
     - it generates `go.sum` if it does not exist with the dependencies versions and integrity hashes
+    - no more need to run `go get ./...`
+    - downloaded libraries use semantic version
+    - it updated `go.mod` with ALL the possible combinations of OS, architecture and build tags.
 * `go build` and `go test` update the `go.mod` file with the required packages
 * Optional: run `go mod vendor` if you want to create a backwards-compatible `vendor` folder.
 * **Go flags**
@@ -312,14 +315,26 @@ type Beer struct {
     - Use [copy](https://golang.org/pkg/builtin/#copy) when dealing with slices, in order to not share the array.
 * **Don’t communicate by sharing memory, share memory by communicating.**
 
-
-## Go project structure
+## General questions
+### Go project structure
 * Having an `internal` folder is quite common: everything inside there will not be visible from the outside
 * https://blog.friendsofgo.tech/posts/como_estructurar_tus_aplicaciones_go/
 * sadfasf
     - `cmd`: entrypoints, client actions.
     - `pkg`: everything that could be reused from the outside
     - `internal`: it is protected, only for our own stuff, not visible.
+
+### Go mod + init
+* Vendoring: having all the dependencies inside our project, under `/vendor`
+    - Useful for example in a CI tool, for performance reason: instead of having to download each time all the dependencies, they are already in the project.
+* With Go modules, you don't need the vendoring: 
+    - https://blog.friendsofgo.tech/posts/go-modules-en-tres-pasos/
+* `init()` will be executed each time the package where it's contained it is imported
+    - not recommended 
+
+### Next steps
+* REST API: https://blog.friendsofgo.tech/posts/como_crear_una_api_rest_en_golang/
+
 
 ## Exercises
 * Error handling: https://pro.codely.tv/library/introduccion-a-go-tu-primera-app/89042/path/step/59271607/
@@ -338,6 +353,7 @@ type Beer struct {
 * test 
     - files like `xxxx_test.go` under same folder (though it could be all together under a `tests` folder)
     - Instead of asserting, we fail if something did not go as expected. Use `testify` for asserting
+* Dependency management: vendoring or Go module, very inmature...
 
 
 ## Links
@@ -354,6 +370,23 @@ type Beer struct {
 * Friends of Go:
     - Twitter: https://twitter.com/friendsofgotech
     - Blog: https://friendsofgo.tech
+
+### People to follow
+* Dave Cheney
+* [Francesc Campoy] (https://twitter.com/francesc)
+* [Bill Kennedy] (https://twitter.com/goinggodotnet)
+* [Jon Calhoun] (https://twitter.com/joncalhoun)
+* [Mat Ryer] (https://twitter.com/matryer)
+
+
+### Useful resources
+* [Gophercises](https://gophercises.com/) - Muy útil para hacer ejercicios variados, próximamente tendremos el recurso en español por nosotros en Friends of Go
+* [Go by example](https://gobyexample.com/)
+* [Go Tour] (https://tour.golang.org/welcome/1)
+* [Go 101] (https://go101.org/article/101.html)
+* [Golang Programs] (http://www.golangprograms.com/)
+* [Practical Go] (https://dave.cheney.net/practical-go) - Próximamente traducido al español por nosotros en Friends of Go
+
 
 ## To ask or research
 * Equivalent to Hamcrest?
