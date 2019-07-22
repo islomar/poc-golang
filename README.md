@@ -80,6 +80,44 @@ The flag package provides a simple API for parsing command-line flags.
 ## Static analysis
 * gofmt for formatting
 
+
+## How to write Go code
+* https://golang.org/doc/code.html
+* `go get` will fetch, build, and install it automatically under `$GOPATH/src`
+* `go install`: This command builds the hello command, producing an executable binary. It then installs that binary to the workspace's bin directory.
+
+
+## A Tour of Go
+* Go's return values may be named. If so, they are treated as variables defined at the top of the function.
+    - A return statement without arguments returns the named return values. This is known as a "naked" return.
+    - Naked return statements should be used only in short functions, as with the example shown here. They can harm readability in longer functions.
+* A `var` statement can be at package or function level.   
+* Outside a function, every statement begins with a keyword (var, func, and so on) and so the `:=` construct is not available.   
+* Basic types: 
+    - https://tour.golang.org/basics/11
+    - The int, uint, and uintptr types are usually 32 bits wide on 32-bit systems and 64 bits wide on 64-bit systems. 
+* The expression `T(v)` converts the value v to the type T.
+
+### Flow control
+* Go has only one looping construct, the `for` loop.
+* The `while` is done with a for continued: `for sum < 1000 {`
+* Forever: `for {`
+* Like for, the if statement can start with a short statement to execute before the condition.
+* Variables declared inside an if short statement are also available inside any of the else blocks.
+* Switch:
+    - Go only runs the selected case, not all the cases that follow. 
+    - In effect, the break statement that is needed at the end of each case in those languages is provided automatically in Go. 
+    - Another important difference is that Go's switch cases need not be constants, and the values involved need not be integers.
+    - Switch without a condition is the same as switch true. This construct can be a clean way to write long if-then-else chains.
+* A `defer` statement defers the execution of a function until the surrounding function returns.
+    - The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding function returns.
+    - Deferred function calls are pushed onto a stack. When a function returns, its deferred calls are executed in last-in-first-out order.
+
+
+### Pointers
+* TBD
+
+
 ## Interesting links
 
 ### Videos

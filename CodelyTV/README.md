@@ -344,7 +344,7 @@ type Beer struct {
 ## WTFs
 * Visibility public/private according to upper/lower case
 * Looks like not differentiating "A has same type of B" and "A is compound of B"
-* single letters as variable names
+* single letters as variable names: bad readability
 * repeated block for handling err...
 * Implicit interfaces
 * The array size defines its type
@@ -354,6 +354,10 @@ type Beer struct {
     - files like `xxxx_test.go` under same folder (though it could be all together under a `tests` folder)
     - Instead of asserting, we fail if something did not go as expected. Use `testify` for asserting
 * Dependency management: vendoring or Go module, very inmature...
+* If with a short statement: bad readability
+* Naked returns: bad readability
+* constants with camel case
+* switch/case not indented: bad readability
 
 
 ## Links
