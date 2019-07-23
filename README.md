@@ -115,7 +115,16 @@ The flag package provides a simple API for parsing command-line flags.
 
 
 ### Pointers
-* TBD
+* Go has pointers. A pointer holds the memory address of a value.
+* The type `*T` is a pointer to a T value. Its zero value is nil
+* The `&` operator generates a pointer to its operand.
+* The * operator denotes the pointer's underlying value.
+* This is known as "dereferencing" or "indirecting".
+* Unlike C, Go has no pointer arithmetic.
+
+### Structs
+A struct is a collection of fields.
+
 
 
 ## Interesting links

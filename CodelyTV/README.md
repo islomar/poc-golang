@@ -343,7 +343,6 @@ type Beer struct {
 
 ## WTFs
 * Visibility public/private according to upper/lower case
-* Looks like not differentiating "A has same type of B" and "A is compound of B"
 * single letters as variable names: bad readability
 * repeated block for handling err...
 * Implicit interfaces
