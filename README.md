@@ -114,18 +114,27 @@ The flag package provides a simple API for parsing command-line flags.
     - Deferred function calls are pushed onto a stack. When a function returns, its deferred calls are executed in last-in-first-out order.
 
 
-### Pointers
-* Go has pointers. A pointer holds the memory address of a value.
-* The type `*T` is a pointer to a T value. Its zero value is nil
-* The `&` operator generates a pointer to its operand.
-* The * operator denotes the pointer's underlying value.
-* This is known as "dereferencing" or "indirecting".
-* Unlike C, Go has no pointer arithmetic.
-
-### Structs
-A struct is a collection of fields.
-
-
+### More types: structs, slices and maps
+* **Pointers**
+    * Go has pointers. A pointer holds the memory address of a value.
+    * The type `*T` is a pointer to a T value. Its zero value is nil
+    * The `&` operator generates a pointer to its operand.
+    * The * operator denotes the pointer's underlying value.
+    * This is known as "dereferencing" or "indirecting".
+    * Unlike C, Go has no pointer arithmetic.
+* **Structs**
+    * A struct is a collection of fields.
+    * `p  = &Vertex{1, 2}` // has type *Vertex
+        - The special prefix & returns a pointer to the struct value.
+* **Arrays**
+    * The type `[n]T` is an array of n values of type T.   
+        - An array's length is part of its type, so arrays cannot be resized. 
+* **Slices**
+    - A slice literal is like an array literal without the length.
+    - A slice, on the other hand, is a dynamically-sized, flexible view into the elements of an array. In practice, slices are much more common than arrays.     
+    - The type `[]T` is a slice with elements of type T.
+    - A slice does not store any data, it just describes a section of an underlying array.
+    - Changing the elements of a slice modifies the corresponding elements of its underlying array.
 
 ## Interesting links
 
