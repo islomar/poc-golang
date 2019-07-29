@@ -133,8 +133,37 @@ The flag package provides a simple API for parsing command-line flags.
     - A slice literal is like an array literal without the length.
     - A slice, on the other hand, is a dynamically-sized, flexible view into the elements of an array. In practice, slices are much more common than arrays.     
     - The type `[]T` is a slice with elements of type T.
+        - `s := []int{2, 3, 5, 7, 11, 13}`
     - A slice does not store any data, it just describes a section of an underlying array.
     - Changing the elements of a slice modifies the corresponding elements of its underlying array.
+    - When slicing, you may omit the high or low bounds to use their defaults instead.
+    - A slice has both a length and a capacity.
+        - The length of a slice is the number of elements it contains.
+        - The capacity of a slice is the number of elements in the underlying array, counting from the first element in the slice.
+    - `b := make([]int, 0, 5) // len(b)=0, cap(b)=5`
+    - Slices can contain any type, including other slices.
+    - It is common to append new elements to a slice, and so Go provides a built-in `append` function. 
+        - If the backing array of s is too small to fit all the given values a bigger array will be allocated.
+* The `range` form of the for loop iterates over a slice or map.  
+    - `for idx, value := range pow`  
+* **Maps**
+    - Create a map: `m := make(map[string]int)`
+    - Test that a key is present with a two-value assignment: `elem, ok := m[key]`
+    - Map literals:
+    ```
+    var m = map[string]Vertex{
+        "Bell Labs": {40.68433, -74.39967},
+        "Google":    {37.42202, -122.08408},
+    }
+    ```
+* **Functions**
+    - Functions are values too. They can be passed around just like other values.
+    - `func compute(fn func(float64, float64) float64) float64 { ... }`
+    - Function closures: https://tour.golang.org/moretypes/25
+* **Methods**
+    - Go does not have classes. However, you can define methods on types.
+    - A method is a function with a special receiver argument.
+    - In general, all methods on a given type should have either value or pointer receivers, but not a mixture of both. 
 
 ## Interesting links
 
