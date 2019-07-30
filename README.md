@@ -164,7 +164,31 @@ The flag package provides a simple API for parsing command-line flags.
     - Go does not have classes. However, you can define methods on types.
     - A method is a function with a special receiver argument.
     - In general, all methods on a given type should have either value or pointer receivers, but not a mixture of both. 
-
+* **Interfaces**
+    - Implicit interfaces decouple the definition of an interface from its implementation, which could then appear in any package without prearrangement.
+    - Under the hood, interface values can be thought of as a tuple of a value and a concrete type:
+        - `(value, type)`
+        - An interface value holds a value of a specific underlying concrete type.
+        - Calling a method on an interface value executes the method of the same name on its underlying type.
+    - The interface type that specifies zero methods is known as the empty interface: `interface{}`
+        - Empty interfaces are used by code that handles values of unknown type.
+* Type assertions: `t := i.(T)`
+    - To test whether an interface value holds a specific type, a type assertion can return two values: the underlying value and a boolean value that reports whether the assertion succeeded.            
+    - Type switches: https://tour.golang.org/methods/16 
+* A `Stringer` is a type that can describe itself as a string. The fmt package (and many others) look for this interface to print values.   
+* **Goroutines**
+    - Goroutines run in the same address space, so access to shared memory must be synchronized.    
+* **Channels**
+    - `ch <- v`: Send v to channel ch
+    - `v := <-ch`: Receive from ch, and assign value to v.    
+    - A sender can `close(<channelName>)` a channel to indicate that no more values will be sent.
+    - The loop `for i := range c` receives values from the channel repeatedly until it is closed.
+    - Receivers can test whether a channel has been closed by assigning a second parameter to the receive expression:
+        - `v, ok := <-ch`
+        - ok is false if there are no more values to receive and the channel is closed.
+        - Channels aren't like files; you don't usually need to close them. Closing is only necessary when the receiver must be told there are no more values coming, such as to terminate a range loop.
+    - Mutual exclusion: `sync.Mutex`, https://tour.golang.org/concurrency/9
+    
 ## Interesting links
 
 ### Videos
