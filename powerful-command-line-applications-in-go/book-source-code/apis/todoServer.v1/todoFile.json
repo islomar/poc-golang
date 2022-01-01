@@ -1,0 +1,18 @@
+{
+  "results": [
+    {
+      "Task": "Task Number 1",
+      "Done": true,
+      "CreatedAt": "2019-10-13T11:16:00.756817096-04:00",
+      "CompletedAt": "2019-10-13T21:25:30.008877148-04:00"
+    },
+    {
+      "Task": "Task Number 2",
+      "Done": false,
+      "CreatedAt": "2019-10-14T15:55:48.273514272-04:00",
+      "CompletedAt": "0001-01-01T00:00:00Z"
+    }
+  ],
+  "date": 1575922413,
+  "total_results": 2
+}

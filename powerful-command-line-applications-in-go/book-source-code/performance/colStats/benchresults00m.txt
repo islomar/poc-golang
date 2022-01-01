@@ -1,0 +1,6 @@
+goos: linux
+goarch: amd64
+pkg: github.com/rgerardi/rggo/performance/colStats
+Benchmark_Run-4   	      10	1042029902 ns/op	564385222 B/op	 5043008 allocs/op
+PASS
+ok  	github.com/rgerardi/rggo/performance/colStats	11.627s
